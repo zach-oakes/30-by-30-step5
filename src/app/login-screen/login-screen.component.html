@@ -1,0 +1,28 @@
+<mat-toolbar color="primary" class="top-nav">
+  <span class="app-title">Developer Academy Student Enrollment</span>
+</mat-toolbar>
+<div class="login-form">
+  <form>
+    <div class="login-text"><span>Sign in to your account</span></div>
+    <mat-form-field appearance="outline" class="username-input">
+      <mat-label>Username</mat-label>
+      <input matInput name="username">
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="password-input">
+      <mat-label>Password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+    </mat-form-field>
+    <button [routerLink]="'/dashboard'" class="login-button" mat-stroked-button color="primary">
+      Login
+    </button>
+  </form>
+</div>
+
